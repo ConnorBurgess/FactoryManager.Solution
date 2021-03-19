@@ -7,8 +7,11 @@
 <h2>Machine Details</h2>
 <hr />
 <h3>@Html.DisplayNameFor(model => model.MachineName): @Html.DisplayFor(model => model.MachineName)</h3>
+<li>Operating: @Model.Operational</li>
+<li>Malfunctioning: @Model.Malfunctioning</li>
+<li>Repaired: @Model.Repaired</li>
 @* <h3>Date: @Html.DisplayFor(model => model.Date)</h3> *@
-<h3>Number of machines: @Model.JoinEntities.Count</h3>
+<h3>Number of Engineers: @Model.JoinEntities.Count</h3>
 @if(@Model.JoinEntities.Count == 0)
 {
   <p>No machines assigned to an engineer</p>
