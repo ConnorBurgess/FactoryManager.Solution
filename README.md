@@ -62,7 +62,7 @@ I should be able to navigate to a splash page that lists all engineers and machi
 ## To Do:
 
 ## Resources Used:
-
+* Sidebar Navigation - https://tailwindcomponents.com/component/sidebar-navigation
 ## Additional comments:
 * Created on 3/19/21  
 * * *
