@@ -3,7 +3,7 @@
 * * *
 
 ## Description  
-Project creates a vendor management solution for Factory Managers to keep track of engineer-machine service assignments. Utilizes .Net Core 5.0 and follows RESTful practices. Utilizes object relationship mapping (ORM) through Entity Framework Core in order to abstract and simplify SQL interaction.
+Project offers a solution for Factory Managers to keep track of engineer-machine service assignments. Utilizes .Net Core 5.0 and follows RESTful practices. Utilizes object relationship mapping (ORM) through Entity Framework Core in order to abstract and simplify SQL interaction. Project styled with Tailwind & Boxicons.
 
 * * *
 
@@ -13,6 +13,7 @@ Project creates a vendor management solution for Factory Managers to keep track 
 * Entity Framework Core
 * Tailwind
 * PostCSS
+* Boxicons
 * MySQL
 * MySQL Workbench
 * RESTful Routing
