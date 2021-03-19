@@ -10,11 +10,12 @@ Project creates a vendor management solution for Factory Managers to keep track 
 ## Technologies used
 * C#
 * .Net Core v5.0 (ASP.Net Core MVC)
+* Entity Framework Core
+* Tailwind
+* PostCSS
 * MySQL
 * MySQL Workbench
-* Entity Framework Core
 * RESTful Routing
-* CSS / HTML
 * * *
 
 ## User Stories
@@ -35,7 +36,11 @@ I should be able to navigate to a splash page that lists all engineers and machi
 * Ensure MySQL is installed [download here](https://www.mysql.com/)
 * Ensure MySQL Workbench is installed [download here](https://www.mysql.com/products/workbench/)
 
-## Setup 3) Create appsettings.json
+## Setup 3) Install Tailwind
+* Navigate to ./FactoryManager.Solution/FactoryManager and type $"npm install" (no bling / quotes) in terminal in order to install dependencies.
+* Type $"npx tailwind build ./Factory/wwwroot/css/site.css -o ./Factory/wwwroot/css/output.css" (no bling / quotes) in terminal in order to build CSS. 
+
+## Setup 4) Create appsettings.json
 * In root directory of project create a file called "appsettings.json"
 * Copy and paste the following into the file:
 {
@@ -46,7 +51,7 @@ I should be able to navigate to a splash page that lists all engineers and machi
 * Input your UID and password from MYSQL database setup and remove curly braces from around pwd/UID. Please note your port may be different.
 * If you plan to push a project to GitHub, you should avoid revealing sensitive details by [setting up a .gitignore](https://docs.github.com/en/github/using-git/ignoring-files) and ignoring this file.
 
-## Setup 4) Dotnet Setup & Running Program
+## Setup 5) Dotnet Setup & Running Program
 * Navigate to ./FactoryManager.Solution/Factory inside of the cloned repo and type $"dotnet restore" (no bling / quotes) in terminal
 * * From inside ./FactoryManager.Solution/Factory folder type $"dotnet ef database update" (no bling / quotes) in terminal in order to connect migrations to MYSql
 * You may utilize MySQL Workbench in order to verify database files if desired. [Check out the MySQL docs](https://dev.mysql.com/doc/workbench/en/wb-sql-editor-navigator.html)
