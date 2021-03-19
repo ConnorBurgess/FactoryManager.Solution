@@ -4,22 +4,47 @@
 
 @using Factory.Models;
 @model List<Factory.Models.Engineer>;
-<section >
-  <div class="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
-    <div class="text-center lg:w-2/3 w-full">
-<h1>Engineers</h1>
+<div class="min-h-screen py-6 flex flex-col justify-center sm:py-12">
+  <div class="relative py-3 max-w-screen mx-auto">
+    <div class="object-center ">
+      <table class="shadow-lg bg-white rounded-md ">
+        <tr>
+          <th class="bg-blue-100 border text-left px-8 py-4">Engineer Name</th>
+          <th class="bg-blue-100 border text-left px-8 py-4">Engineers</th>
+          <th class="bg-blue-100 border text-left px-8 py-4">Machines</th>
+        </tr>
+        <tr>
+          <td class="border px-8 py-4 text-red-900 animate-pulse"><a href='/Engineers/Create'>Add a new Engineer</a>
+          </td>
+          <td class="border px-8 py-4">Total Engineers: @Model.Count</td>
+        </tr>
 
-@if (@Model.Count == 0)
-{
-  <h3>No Engineers added to database</h3>
-} 
+        @if (@Model.Count == 0)
+        {
+          <h3>No Engineers added to database</h3>
+        }
 
-@foreach (Engineer engineer in Model)
-{
-  <li>@Html.ActionLink($"{engineer.EngineerName}", "Details", new { id = engineer.EngineerId })</li>
-}
+        @foreach (Engineer engineer in Model)
+        {
+          <tr>
+            <td class="border px-8 py-4">@Html.ActionLink($"{engineer.EngineerName}", "Details", new { id =
+            engineer.EngineerId })</td>
+            <td class="border px-8 py-4">
+              @for (int i = 0; i < engineer.EngineerId; i++)
+              { 
+                <i class="text-green-400 bx bx-male"></i>
+              }
+            </td>
+            <td class="border px-8 py-4">
+              @for (int i = 0; i < engineer.JoinEntities.Count; i++)
+              {
+                <i class="text-purple-400 bx bxs-factory"></i>
+              }
 
-<p>@Html.ActionLink("Add an Engineer", "Create")</p>
+            </td>
+          </tr>
+        }
+      </table>
+    </div>
+  </div>
 </div>
-</div>
-</section>
