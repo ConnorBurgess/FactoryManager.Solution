@@ -1,0 +1,29 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Factory.Models.Machine;
+@using System;
+<h2>Machine Details</h2>
+<hr />
+<h3>@Html.DisplayNameFor(model => model.MachineName): @Html.DisplayFor(model => model.MachineName)</h3>
+@* <h3>Date: @Html.DisplayFor(model => model.Date)</h3> *@
+<h3>Number of machines: @Model.JoinEntities.Count</h3>
+@if(@Model.JoinEntities.Count == 0)
+{
+  <p>No machines assigned to an engineer</p>
+}
+else
+{
+  <h4>@Model.MachineName assigned to the following Engineers:</h4>
+  <ul>
+  @foreach(var join in Model.JoinEntities)
+  {
+    <li>@join.Engineer.EngineerName</li>
+  }
+  </ul>
+}
+
+<p>@Html.ActionLink("Back to machines index", "Index")</p>
+<p>@Html.ActionLink("Edit machine", "Edit", new { id = Model.MachineId })</p>
+<p>@Html.ActionLink("Remove machine", "Delete", new { id = Model.MachineId })</p>
