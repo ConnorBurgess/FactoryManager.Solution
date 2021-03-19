@@ -6,18 +6,19 @@
   <meta charset="utf-8">
   <title>Factory Manager</title>
   <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
-  <link rel="stylesheet" href="../wwwroot/css/output.css" />
-  <link rel="stylesheet" href="../wwwroot/css/site.css" />
+  <link rel="stylesheet" href="~/css/output.css" />
+  <link rel="stylesheet" href="~/css/site.css" />
 </head>
-<body class="flex justify-center bg-factorymanager-pattern bg-cover">
-  <div class="float-right"><a href='/'><img src="https://i.ibb.co/KX5SMp5/logo.png" alt="logo" border="0"></a></div>
+<body class="bg-factorymanager-pattern bg-cover bg-gray-500 text-red-500 text-4xl">
   <div class="h-2">
     <div class="transform transition duration-500 hover:scale-110">
     </div>
     <div class="text">
-    @* @Html.Partial("Sidebar", viewModel) *@
+  <div class="float-right"><a href='/'><img src="https://i.ibb.co/KX5SMp5/logo.png" alt="logo" border="0"></a></div>
     @RenderBody()
+    <div class="m"> 
     @Html.Partial("Footer")
+    </div>
   </div>
   </div>
 </body>
