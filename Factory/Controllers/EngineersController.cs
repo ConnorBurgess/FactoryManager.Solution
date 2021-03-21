@@ -17,6 +17,7 @@ namespace Factory.Controllers
 
     public ActionResult Index()
     {
+      ViewBag.MachineTotal = _db.Machines.Count();
       return View(_db.Engineers.ToList());
     }
     public ActionResult Details(int id)
