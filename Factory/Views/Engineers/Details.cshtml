@@ -3,10 +3,13 @@
 }
 
 @model Factory.Models.Engineer
-
-<h2>Engineer Details</h2>
+<div class="min-h-screen py-6 flex flex-col justify-center sm:py-12 bg-gray-400">
+  <div class="relative py-3 max-w-screen mx-auto">
+    <div class="object-center ">
+            <div class="shadow-lg bg-gray-600 rounded-md transform hover:translate-x-2 hover:shadow-2xl p-10">
+<h2 class="text-blue-300">Engineer Details</h2>
 <hr />
-<h3>@Html.DisplayNameFor(model => model.EngineerName): @Html.DisplayFor(model => model.EngineerName)</h3>
+<h3>Engineer: @Html.DisplayFor(model => model.EngineerName)</h3>
 
 @if(@Model.JoinEntities.Count == 0)
 {
@@ -15,20 +18,24 @@
 else
 {
   <h4>Machines assigned to @Model.EngineerName </h4>
-  <ul>
+  <ol>
   @foreach(var join in Model.JoinEntities)
   {
     <li>@join.Machine.MachineName</li>
     @using (Html.BeginForm("DeleteMachine", "Engineers"))
     {
       @Html.Hidden("joinId", @join.EngineerMachineId)
-      <input type="submit" value="Delete"/>
+      <input class="text-red-600 bg-gray-700 rounded-sm" type="submit" value="Delete"/>
     }
   }
-  </ul>
+  </ol>
 }
 
-<p>@Html.ActionLink("Back to Engineers Index", "Index")</p>
-<p>@Html.ActionLink("Edit Engineer", "Edit", new { id = Model.EngineerId })</p>
-<p>@Html.ActionLink("Remove Engineer", "Delete", new { id = Model.EngineerId })</p>
-<p>@Html.ActionLink("Add an Machine", "AddMachine", new { id = Model.EngineerId })</p>
+<p class="text-blue-300">@Html.ActionLink("Back to Engineers Index", "Index")</p>
+<p class="text-blue-300">@Html.ActionLink("Edit Engineer", "Edit", new { id = Model.EngineerId })</p>
+<p class="text-blue-300">@Html.ActionLink("Remove Engineer", "Delete", new { id = Model.EngineerId })</p>
+<p class="text-blue-300">@Html.ActionLink("Add an Machine", "AddMachine", new { id = Model.EngineerId })</p>
+</div>
+</div>
+</div>
+</div>

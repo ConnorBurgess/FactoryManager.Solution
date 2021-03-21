@@ -4,29 +4,39 @@
 
 @model Factory.Models.Machine;
 @using System;
-<h2>Machine Details</h2>
-<hr />
-<h3>@Html.DisplayNameFor(model => model.MachineName): @Html.DisplayFor(model => model.MachineName)</h3>
-<li>Operating: @Model.Operational</li>
-<li>Malfunctioning: @Model.Malfunctioning</li>
-<li>Repaired: @Model.Repaired</li>
-@* <h3>Date: @Html.DisplayFor(model => model.Date)</h3> *@
-<h3>Number of Engineers: @Model.JoinEntities.Count</h3>
-@if(@Model.JoinEntities.Count == 0)
-{
-  <p>No machines assigned to an engineer</p>
-}
-else
-{
-  <h4>@Model.MachineName assigned to the following Engineers:</h4>
-  <ul>
-  @foreach(var join in Model.JoinEntities)
-  {
-    <li>@join.Engineer.EngineerName</li>
-  }
-  </ul>
-}
-
-<p>@Html.ActionLink("Back to machines index", "Index")</p>
-<p>@Html.ActionLink("Edit machine", "Edit", new { id = Model.MachineId })</p>
-<p>@Html.ActionLink("Remove machine", "Delete", new { id = Model.MachineId })</p>
+<div class="min-h-screen py-6 flex flex-col justify-center sm:py-12 bg-gray-400">
+  <div class="relative py-3 max-w-screen mx-auto">
+    <div class="object-center ">
+                  <div class="shadow-lg bg-gray-600 rounded-md transform hover:translate-x-2 hover:shadow-2xl p-10">
+      <h2 class="text-blue-300 font-bold text-center text-5xl">Machine Details</h2>
+      <hr class="mb-3">
+      <h3>Machine: <span class="text-purple-500"> @Html.DisplayFor(model => model.MachineName)</span></h3>
+      <li>Operating: <span class="text-red-600">@Model.Operational</span></li>
+      <li>Malfunctioning: <span class="text-red-600">@Model.Malfunctioning</span> </li>
+      <li>Repaired: <span class="text-red-600">@Model.Repaired</span></li> <br>
+      @* <h3>Date: @Html.DisplayFor(model => model.Date)</h3> *@
+      @if (@Model.JoinEntities.Count == 0)
+      {
+        <p>No machines assigned to an engineer</p>
+      }
+      else
+      {
+        <h4 class="text-blue-300 font-bold">Machine @Model.MachineName assigned to the following Engineers:</h4>
+         <hr class="mb-3">
+        <ul>
+          @foreach (var join in Model.JoinEntities)
+          {
+            
+            <li><span class="">@join.Engineer.EngineerName</span> <i class="text-green-400 bx bx-male"># @join.Engineer.EngineerId</i></li>
+          }
+        </ul>
+      }
+      <hr class="my-3 mb-3">
+      <div class="text-blue-300">
+      <p class="hover:scale-110">@Html.ActionLink("Back to machines index", "Index")</p>
+      <p class="hover:scale-110">@Html.ActionLink("Edit machine", "Edit", new { id = Model.MachineId })</p>
+      <p class="hover:scale-110">@Html.ActionLink("Remove machine", "Delete", new { id = Model.MachineId })</p>
+      </div>
+  </div>
+</div>
+</div>
