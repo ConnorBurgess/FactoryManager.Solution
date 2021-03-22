@@ -1,15 +1,16 @@
 # FactoryManager.Solution
 #### Created By: Connor Burgess 
 * * *
+<p align="center"><img src="Factory/wwwroot/assets/img/fmanagerthumb.jpg" alt="Factory Manager"
+	title="Factory Manager" width="350" height="200"></p>
 
 ## Description  
-Project offers a solution for Factory Managers to keep track of engineer-machine service assignments. Utilizes .Net Core 5.0 and follows RESTful practices. Utilizes object relationship mapping (ORM) through Entity Framework Core in order to abstract and simplify SQL interaction. Project styled with Tailwind & Boxicons.
-
+Project is designed for factory managers to easily access engineer-machine service assignments and workflow. Project styling is created in a dark mode theme and mostly styled using Tailwind utility classes & Boxicons. Utilizes .Net Core 5.0 and follows RESTful practices. Utilizes object relationship mapping (ORM) through Entity Framework Core in order to abstract and simplify SQL interaction. 
 * * *
 
 ## Technologies used
 * C#
-* .Net Core v5.0 (ASP.Net Core MVC)
+* .Net Core v5.0
 * Entity Framework Core
 * Tailwind
 * PostCSS
@@ -50,7 +51,7 @@ I should be able to navigate to a splash page that lists all engineers and machi
   }
 }
 * Input your UID and password from MYSQL database setup and remove curly braces from around pwd/UID. Please note your port may be different.
-* If you plan to push a project to GitHub, you should avoid revealing sensitive details by [setting up a .gitignore](https://docs.github.com/en/github/using-git/ignoring-files) and ignoring this file.
+* If planning to push a project to GitHub, it is advised to avoid revealing sensitive details by [setting up a .gitignore](https://docs.github.com/en/github/using-git/ignoring-files) and ignoring this file.
 
 ## Setup 5) Dotnet Setup & Running Program
 * Navigate to ./FactoryManager.Solution/Factory inside of the cloned repo and type $"dotnet restore" (no bling / quotes) in terminal

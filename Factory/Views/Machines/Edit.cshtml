@@ -3,18 +3,23 @@
 }
 
 @model Factory.Models.Machine
+<div class="min-h-screen py-6 flex flex-col justify-center sm:py-12 bg-gray-400">
+  <div class="relative py-3 max-w-screen mx-auto">
+    <div class="object-center ">
+      <h2>Edit</h2>
 
-<h2>Edit</h2>
+      <h4>Edit machine: @Html.DisplayFor(model => model.MachineName)</h4>
 
-<h4>Edit machine: @Html.DisplayFor(model => model.MachineName)</h4>
+      @using (Html.BeginForm())
+      {
+        @Html.HiddenFor(model => model.MachineId)
 
-@using (Html.BeginForm())
-{
-  @Html.HiddenFor(model => model.MachineId)
+        @Html.LabelFor(model => model.MachineName)
+        @Html.EditorFor(model => model.MachineName)
 
-  @Html.LabelFor(model => model.MachineName)
-  @Html.EditorFor(model => model.MachineName)
-
-  <input type="submit" value="Save" />
-}
-<p>@Html.ActionLink("Back to list", "Index")</p>
+        <input type="submit" value="Save" />
+      }
+      <p>@Html.ActionLink("Back to list", "Index")</p>
+    </div>
+  </div>
+</div>

@@ -3,12 +3,17 @@
 }
 
 @model Factory.Models.Machine
+<div class="min-h-screen py-6 flex flex-col justify-center sm:py-12 bg-gray-400">
+  <div class="relative py-3 max-w-screen mx-auto">
+    <div class="object-center ">
+      <h2>Are you sure you want to remove this machine?</h2>
 
-<h2>Are you sure you want to remove this machine?</h2>
-
-@Html.DisplayNameFor(model => model.MachineName): @Html.DisplayFor(model => model.MachineName)
-@using (Html.BeginForm())
-{
-    <input type="submit" value="Delete" />
-}
-@Html.ActionLink("Return to machines index", "Index")
+      @Html.DisplayNameFor(model => model.MachineName): @Html.DisplayFor(model => model.MachineName)
+      @using (Html.BeginForm())
+      {
+        <input type="submit" value="Delete" />
+      }
+      @Html.ActionLink("Return to machines index", "Index")
+    </div>
+  </div>
+</div>

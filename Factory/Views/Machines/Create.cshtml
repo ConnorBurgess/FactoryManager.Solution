@@ -3,23 +3,28 @@
 }
 
 @model Factory.Models.Machine
+<div class="min-h-screen py-6 flex flex-col justify-center sm:py-12 bg-gray-400">
+  <div class="relative py-3 max-w-screen mx-auto">
+    <div class="object-center ">
+      <h4>Add a new machine</h4>
+      @using (Html.BeginForm())
+      {
+        @Html.LabelFor(model => model.MachineName, "Machine Name: ")
+        @Html.TextBoxFor(model => model.MachineName)
+        @Html.LabelFor(model => model.Operational, "Operational: ")
+        @Html.CheckBoxFor(model => model.Operational, true)
+        @Html.LabelFor(model => model.Operational, "Malfunctioning: ")
+        @Html.CheckBoxFor(model => model.Malfunctioning)
+        @Html.LabelFor(model => model.Operational, "Repaired: ")
+        @Html.CheckBoxFor(model => model.Repaired)
 
-<h4>Add a new machine</h4>
-@using (Html.BeginForm())
-{
-  @Html.LabelFor(model => model.MachineName, "Machine Name: ")
-  @Html.TextBoxFor(model => model.MachineName)
-  @Html.LabelFor(model => model.Operational, "Operational: ")
-  @Html.CheckBoxFor(model => model.Operational, true)
-  @Html.LabelFor(model => model.Operational, "Malfunctioning: ")
-  @Html.CheckBoxFor(model => model.Malfunctioning)
-  @Html.LabelFor(model => model.Operational, "Repaired: ")
-  @Html.CheckBoxFor(model => model.Repaired)
-
-  @* @Html.LabelFor(model => model.Date, "Date ")
-  @Html.TextBoxFor(model => model.Date, new { @type = "date" }) *@
+        @* @Html.LabelFor(model => model.Date, "Date ")
+          @Html.TextBoxFor(model => model.Date, new { @type = "date" }) *@
 
 
-  <input type="submit" value="Add new machine" />
-}
-<p>@Html.ActionLink("Return to machines index", "Index")</p>
+        <input type="submit" value="Add new machine" />
+      }
+      <p>@Html.ActionLink("Return to machines index", "Index")</p>
+    </div>
+  </div>
+</div>

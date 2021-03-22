@@ -3,7 +3,9 @@
 }
 
 @model Factory.Models.Engineer
-
+<div class="min-h-screen py-6 flex flex-col justify-center sm:py-12 bg-gray-400">
+  <div class="relative py-3 max-w-screen mx-auto">
+    <div class="object-center ">
 <h2>Add a Machine</h2>
 
 <h4>Add a machine for servicing to this Engineer: @Html.DisplayFor(model => model.EngineerName)</h4>
@@ -17,5 +19,7 @@
 
     <input type="submit" value="Save" />
 }
-
 <p>@Html.ActionLink("Back to list", "Index")</p>
+</div>
+</div>
+</div>

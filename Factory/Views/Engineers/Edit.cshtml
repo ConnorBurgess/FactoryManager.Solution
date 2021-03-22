@@ -3,22 +3,27 @@
 }
 
 @model Factory.Models.Engineer
+<div class="min-h-screen py-6 flex flex-col justify-center sm:py-12 bg-gray-400">
+  <div class="relative py-3 max-w-screen mx-auto">
+    <div class="object-center ">
+      <h2>Edit</h2>
 
-<h2>Edit</h2>
+      <h4>Edit this Engineer: @Html.DisplayFor(model => model.EngineerName)</h4>
 
-<h4>Edit this Engineer: @Html.DisplayFor(model => model.EngineerName)</h4>
+      @using (Html.BeginForm())
+      {
+        @Html.HiddenFor(model => model.EngineerId)
 
-@using (Html.BeginForm())
-{
-    @Html.HiddenFor(model => model.EngineerId)
+        @Html.LabelFor(model => model.EngineerName)
+        @Html.EditorFor(model => model.EngineerName)
 
-    @Html.LabelFor(model => model.EngineerName)
-    @Html.EditorFor(model => model.EngineerName)
+        @Html.Label("Select Engineer")
+        @Html.DropDownList("EngineerId")
 
-    @Html.Label("Select Engineer")
-    @Html.DropDownList("EngineerId")
+        <input type="submit" value="Save" />
+      }
 
-    <input type="submit" value="Save" />
-}
-
-<p>@Html.ActionLink("Back to Engineer Index", "Index")</p>
+      <p>@Html.ActionLink("Back to Engineer Index", "Index")</p>
+    </div>
+  </div>
+</div>

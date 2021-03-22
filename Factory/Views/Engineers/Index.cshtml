@@ -4,19 +4,20 @@
 
 @using Factory.Models;
 @model List<Factory.Models.Engineer>;
-<div class="min-h-screen py-6 flex flex-col justify-center sm:py-12 bg-gray-400">
+<div class="min-h-screen py-6 flex flex-col justify-center sm:py-12 bg-gray-400 bg-opacity-95">
   <div class="relative py-3 max-w-screen mx-auto">
     <div class="object-center ">
-      <table class="shadow-lg bg-gray-600 rounded-md ">
+      <table class="shadow-lg bg-gray-600 rounded-md transform hover:translate-x-2 hover:shadow-2xl">
         <tr>
+          <tr class="bg-gray-800"><td class=" text-center px-8 py-4"> Manage Engineers <i class='bx bxs-group'></i></td></tr>
           <th class="bg-gray-600 text-blue-300 border text-left px-8 py-4">Engineer Name</th>
-          <th class="bg-gray-600 text-blue-300 border text-left px-8 py-4">Engineers</th>
-          <th class="bg-gray-600 text-blue-300 border text-left px-8 py-4">Machines</th>
+          <th class="bg-gray-600 text-blue-300 border text-left px-8 py-4">Engineer</th>
+          <th class="bg-gray-600 text-blue-300 border text-left px-8 py-4">Machines assigned</th>
         </tr>
         <tr>
-          <td class="border px-8 py-4 text-blue-300 animate-pulse"><a href='/Engineers/Create'>Add a new Engineer</a></td>
+          <td class="border px-8 py-4 text-blue-300 animate-pulse"><a href='/Engineers/Create'>Add a new Engineer</a></td> 
           <td class="border px-8 py-4"><i class="text-blue-300 bx bx-male"> = @Model.Count</i></td>
-          <td class="border px-8 py-4"><i class="text-blue-300 bx bx-male"> = @ViewBag.MachineTotal</i></td>
+          <td class="border px-8 py-4"><i class="text-blue-300 bx bxs-factory"> = @ViewBag.MachineTotal</i></td>
         </tr>
 
         @if (@Model.Count == 0)
