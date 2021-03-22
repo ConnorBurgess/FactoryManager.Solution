@@ -5,7 +5,7 @@
 	title="Factory Manager" width="350" height="200"></p>
 
 ## Description  
-Project is designed for factory managers to easily access engineer-machine service assignments and workflow. Project styling is created in a dark mode theme and mostly styled using Tailwind utility classes & Boxicons. Utilizes .Net Core 5.0 and follows RESTful practices. Utilizes object relationship mapping (ORM) through Entity Framework Core in order to abstract and simplify SQL interaction. 
+Project is designed for factory managers to easily access engineer-machine service assignments and workflow. Project is created in a dark mode theme and mostly styled using Tailwind utility classes & Boxicons. Utilizes .Net Core 5.0 and follows RESTful practices. Relational data is manipulated using ORM through Entity Framework Core in order to abstract and simplify SQL interaction. 
 * * *
 
 ## Technologies used
@@ -65,6 +65,7 @@ I should be able to navigate to a splash page that lists all engineers and machi
 
 ## Resources Used:
 * Sidebar Navigation - https://tailwindcomponents.com/component/sidebar-navigation
+* Sign up form - https://tailwindcomponents.com/component/sign-up-form-1
 ## Additional comments:
 * Created on 3/19/21  
 * * *
