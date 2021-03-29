@@ -1,7 +1,7 @@
 # FactoryManager.Solution
 #### Created By: Connor Burgess 
 * * *
-<p align="center"><img src="Factory/wwwroot/assets/img/fmanagerthumb.jpg" alt="Factory Manager"
+<p align="center"><img src="Factory/wwwroot/assets/img/fmanagerthumbanimated.gif" alt="Factory Manager"
 	title="Factory Manager" width="350" height="200"></p>
 
 ## Description  
@@ -63,10 +63,12 @@ I should be able to navigate to a splash page that lists all engineers and machi
 * * *
 
 ## To Do:
+* Additional polishing, cleaning up style and code
 
 ## Resources Used:
 * Sidebar Navigation - https://tailwindcomponents.com/component/sidebar-navigation
 * Sign up form - https://tailwindcomponents.com/component/sign-up-form-1
+
 ## Additional comments:
 * Created on 3/19/21  
 * * *
