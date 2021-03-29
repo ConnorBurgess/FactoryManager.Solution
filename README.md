@@ -10,7 +10,8 @@ Project is designed for factory managers to easily access engineer-machine servi
 
 ## Technologies used
 * C#
-* .Net Core v5.0
+* .Net v5.0
+* ASP.net Core MVC
 * Entity Framework Core
 * Tailwind
 * PostCSS
