@@ -7,11 +7,15 @@
   <div class="relative py-3 max-w-screen mx-auto">
     <div class="object-center ">
       <table class="shadow-lg bg-gray-600 rounded-md transform hover:translate-x-2 hover:shadow-2xl">
-                <tr class="bg-gray-800"><td class=" text-center px-8 py-4"> Manage Machines <i class='bx bxs-group'></i></td></tr>
+        <tr class="bg-gray-800">
+          <td class=" text-center px-8 py-4"> <a href='/Engineers/'> <i
+                class='text-5xl absolute right-6 bx bx-exit text-green-400'></i></a>Manage Machines <i
+              class='bx bxs-group'></i></td>
+        </tr>
         <tr>
           <th class="bg-gray-600 text-blue-300 border text-left px-8 py-4">Machine Name</th>
-          <th class="bg-gray-600 text-blue-300 border text-left px-8 py-4">Machine</th>
-          <th class="bg-gray-600 text-blue-300 border text-left px-8 py-4">Engineers assigned</th>
+          <th class="bg-gray-600 text-blue-300 border text-left px-8 py-4">Machine ID</th>
+          <th class="bg-gray-600 text-blue-300 border text-left px-8 py-4">Engineers Allocated</th>
         </tr>
         <tr>
           <td class="border px-8 py-4 text-blue-300 animate-pulse"><a href='/Machines/Create'>Add a new Machine</a></td>
@@ -24,31 +28,22 @@
           <h3>No Machines added to database</h3>
         }
 
-          @foreach(Machine machine in Model)
+        @foreach (Machine machine in Model)
         {
           <tr>
             <td class="border px-8 py-4">@Html.ActionLink($"{machine.MachineName}", "Details", new { id =
             machine.MachineId })</td>
             <td class="border px-8 py-4">
-              @if (machine.MachineId < 5) {
-              @for (int i = 0; i < machine.MachineId; i++)
-              { 
-                <i class="text-purple-400 bx bxs-factory"></i>
-              }
-              }
-              @if (machine.MachineId >= 5) {
-                <i class="text-purple-400 bx bxs-factory"># @machine.MachineId</i>
-              }
+              <i class="text-purple-400 bx bxs-factory">#@machine.MachineId</i>
             </td>
             <td class="border px-8 py-4">
-              @if (machine.JoinEntities.Count < 5) {
-              @for (int i = 0; i < machine.JoinEntities.Count; i++)
+              @if (machine.JoinEntities.Count > 0)
               {
-                <i class="text-green-400 bx bx-male"></i>
+                <i class="text-green-400 bx bx-male"> x @machine.JoinEntities.Count</i>
               }
-              }
-              @if (machine.JoinEntities.Count >= 5) {
-                <i class="text-green-400 bx bx-male"># @machine.JoinEntities.Count</i>
+              else
+              {
+                <p class="text-blue-300"> Not yet assigned</p>
               }
             </td>
           </tr>

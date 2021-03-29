@@ -5,15 +5,20 @@
 @model Factory.Models.Engineer
 <div class="min-h-screen py-6 flex flex-col justify-center sm:py-12 bg-gray-400">
   <div class="relative py-3 max-w-screen mx-auto">
-    <div class="object-center ">
-      <h2>Are you sure you want to remove this Engineer from database?</h2>
-
-      @Html.DisplayNameFor(model => model.EngineerName): @Html.DisplayFor(model => model.EngineerName)
+    <div class="object-center bg-gray-600 p-16 border-black rounded-md transform hover:translate-x-2 hover:shadow-2xl">
+      <h2 class="text-blue-300 text-5xl text-center mb-3">Remove Entry</h2>
+      <hr class="pb-3">
+      <span class="text-center object-center text-yellow-400 ml-96"><i class='bx bxs-radiation'></i><i class='bx bxs-radiation'></i><i class='bx bxs-radiation'></i><i class='bx bxs-radiation'></i><i class='bx bxs-radiation'></i></span>
+      <div class="text-center">
+      <h2 class="mb-9 text-white">Would you like to permanently remove <span class="text-green-400"><i class='bx bx-male'></i>#@Model.EngineerId </span> from database?</h2>
+      <hr class="mb-14">
+      @Html.DisplayName("Name:" ) @Html.DisplayFor(model => model.EngineerName)
       @using (Html.BeginForm())
       {
-        <input type="submit" value="Delete" />
+        <input class="text-red-700 bg-gray-700" type="submit" value="Delete" />
       }
       @Html.ActionLink("Back to List", "Index")
+    </div>
     </div>
   </div>
 </div>

@@ -4231,6 +4231,10 @@ video {
   background-image: linear-gradient(to top left, var(--tw-gradient-stops));
 }
 
+.bg-factorymanager-pattern {
+  background-image: url('https://images.unsplash.com/photo-1462556791646-c201b8241a94?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2896&q=80');
+}
+
 .from-transparent {
   --tw-gradient-from: transparent;
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(0, 0, 0, 0));
@@ -31153,6 +31157,26 @@ video {
   }
 }
 
+@-webkit-keyframes wiggle {
+  0%, 100% {
+    transform: rotate(-3deg);
+  }
+
+  50% {
+    transform: rotate(3deg);
+  }
+}
+
+@keyframes wiggle {
+  0%, 100% {
+    transform: rotate(-3deg);
+  }
+
+  50% {
+    transform: rotate(3deg);
+  }
+}
+
 .animate-none {
   -webkit-animation: none;
           animation: none;
@@ -31176,6 +31200,11 @@ video {
 .animate-bounce {
   -webkit-animation: bounce 1s infinite;
           animation: bounce 1s infinite;
+}
+
+.animate-wiggle {
+  -webkit-animation: wiggle 3s ease-in-out infinite;
+          animation: wiggle 3s ease-in-out infinite;
 }
 
 .inset-center {
@@ -34862,6 +34891,10 @@ video {
 
   .sm\:bg-gradient-to-tl {
     background-image: linear-gradient(to top left, var(--tw-gradient-stops));
+  }
+
+  .sm\:bg-factorymanager-pattern {
+    background-image: url('https://images.unsplash.com/photo-1462556791646-c201b8241a94?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2896&q=80');
   }
 
   .sm\:from-transparent {
@@ -61731,6 +61764,11 @@ video {
     -webkit-animation: bounce 1s infinite;
             animation: bounce 1s infinite;
   }
+
+  .sm\:animate-wiggle {
+    -webkit-animation: wiggle 3s ease-in-out infinite;
+            animation: wiggle 3s ease-in-out infinite;
+  }
 }
 
 @media (min-width: 768px) {
@@ -65410,6 +65448,10 @@ video {
 
   .md\:bg-gradient-to-tl {
     background-image: linear-gradient(to top left, var(--tw-gradient-stops));
+  }
+
+  .md\:bg-factorymanager-pattern {
+    background-image: url('https://images.unsplash.com/photo-1462556791646-c201b8241a94?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2896&q=80');
   }
 
   .md\:from-transparent {
@@ -92279,6 +92321,11 @@ video {
     -webkit-animation: bounce 1s infinite;
             animation: bounce 1s infinite;
   }
+
+  .md\:animate-wiggle {
+    -webkit-animation: wiggle 3s ease-in-out infinite;
+            animation: wiggle 3s ease-in-out infinite;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -95958,6 +96005,10 @@ video {
 
   .lg\:bg-gradient-to-tl {
     background-image: linear-gradient(to top left, var(--tw-gradient-stops));
+  }
+
+  .lg\:bg-factorymanager-pattern {
+    background-image: url('https://images.unsplash.com/photo-1462556791646-c201b8241a94?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2896&q=80');
   }
 
   .lg\:from-transparent {
@@ -122827,6 +122878,11 @@ video {
     -webkit-animation: bounce 1s infinite;
             animation: bounce 1s infinite;
   }
+
+  .lg\:animate-wiggle {
+    -webkit-animation: wiggle 3s ease-in-out infinite;
+            animation: wiggle 3s ease-in-out infinite;
+  }
 }
 
 @media (min-width: 1280px) {
@@ -126506,6 +126562,10 @@ video {
 
   .xl\:bg-gradient-to-tl {
     background-image: linear-gradient(to top left, var(--tw-gradient-stops));
+  }
+
+  .xl\:bg-factorymanager-pattern {
+    background-image: url('https://images.unsplash.com/photo-1462556791646-c201b8241a94?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2896&q=80');
   }
 
   .xl\:from-transparent {
@@ -153375,6 +153435,11 @@ video {
     -webkit-animation: bounce 1s infinite;
             animation: bounce 1s infinite;
   }
+
+  .xl\:animate-wiggle {
+    -webkit-animation: wiggle 3s ease-in-out infinite;
+            animation: wiggle 3s ease-in-out infinite;
+  }
 }
 
 @media (min-width: 1536px) {
@@ -157054,6 +157119,10 @@ video {
 
   .\32xl\:bg-gradient-to-tl {
     background-image: linear-gradient(to top left, var(--tw-gradient-stops));
+  }
+
+  .\32xl\:bg-factorymanager-pattern {
+    background-image: url('https://images.unsplash.com/photo-1462556791646-c201b8241a94?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2896&q=80');
   }
 
   .\32xl\:from-transparent {
@@ -183922,5 +183991,10 @@ video {
   .\32xl\:animate-bounce {
     -webkit-animation: bounce 1s infinite;
             animation: bounce 1s infinite;
+  }
+
+  .\32xl\:animate-wiggle {
+    -webkit-animation: wiggle 3s ease-in-out infinite;
+            animation: wiggle 3s ease-in-out infinite;
   }
 }

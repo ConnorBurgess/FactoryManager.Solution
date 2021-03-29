@@ -5,25 +5,22 @@
 @model Factory.Models.Engineer
 <div class="min-h-screen py-6 flex flex-col justify-center sm:py-12 bg-gray-400">
   <div class="relative py-3 max-w-screen mx-auto">
-    <div class="object-center ">
-      <h2>Edit</h2>
-
-      <h4>Edit this Engineer: @Html.DisplayFor(model => model.EngineerName)</h4>
+    <div class="object-center bg-gray-600 p-10 rounded-md transform hover:translate-x-2 hover:shadow-2xl">
+      <h4><span class="text-blue-300"> Edit Engineer:</span> @Html.DisplayFor(model => model.EngineerName)</h4>
+      <hr class="py-6">
 
       @using (Html.BeginForm())
       {
         @Html.HiddenFor(model => model.EngineerId)
 
-        @Html.LabelFor(model => model.EngineerName)
-        @Html.EditorFor(model => model.EngineerName)
+        @Html.Label("Name: ")
+        <div class="mb-6 text-black"> @Html.EditorFor(model => model.EngineerName)</div>
 
-        @Html.Label("Select Engineer")
-        @Html.DropDownList("EngineerId")
-
-        <input type="submit" value="Save" />
+        @Html.Label("Quick Assign Machine")
+        <div class="mb-6 text-black"> @Html.DropDownList("MachineId") </div>
+<div class="text-right"><input class="text-blue-300 bg-gray-700" type="submit" value="Save" /></div>
       }
 
-      <p>@Html.ActionLink("Back to Engineer Index", "Index")</p>
-    </div>
+      <p class="text-blue-300">@Html.ActionLink("Back to Engineer Index", "Index")</p>
   </div>
 </div>

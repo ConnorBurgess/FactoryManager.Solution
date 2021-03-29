@@ -14,7 +14,6 @@
       <li>Operating: <span class="text-red-600">@Model.Operational</span></li>
       <li>Malfunctioning: <span class="text-red-600">@Model.Malfunctioning</span> </li>
       <li>Repaired: <span class="text-red-600">@Model.Repaired</span></li> <br>
-      @* <h3>Date: @Html.DisplayFor(model => model.Date)</h3> *@
       @if (@Model.JoinEntities.Count == 0)
       {
         <p>No machines assigned to an engineer</p>
@@ -22,13 +21,18 @@
       else
       {
         <h4 class="text-blue-300 font-bold">Machine @Model.MachineName assigned to the following Engineers:</h4>
-         <hr class="mb-3">
+        <hr class="mb-3">
         <ul>
           @foreach (var join in Model.JoinEntities)
           {
-            
             <li><span class="">@join.Engineer.EngineerName</span> <i class="text-green-400 bx bx-male"># @join.Engineer.EngineerId</i></li>
-          }
+         @using (Html.BeginForm("DeleteEngineer", "Machines"))
+         {
+            @Html.Hidden("joinId", @join.EngineerMachineId)
+            <input class="text-red-600 bg-gray-700 rounded-sm" type="submit" value="Delete"/>
+         }
+  }
+         }
         </ul>
       }
       <hr class="my-3 mb-3">

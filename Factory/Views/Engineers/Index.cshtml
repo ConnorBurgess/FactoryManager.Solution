@@ -9,13 +9,18 @@
     <div class="object-center ">
       <table class="shadow-lg bg-gray-600 rounded-md transform hover:translate-x-2 hover:shadow-2xl">
         <tr>
-          <tr class="bg-gray-800"><td class=" text-center px-8 py-4"> Manage Engineers <i class='bx bxs-group'></i></td></tr>
-          <th class="bg-gray-600 text-blue-300 border text-left px-8 py-4">Engineer Name</th>
-          <th class="bg-gray-600 text-blue-300 border text-left px-8 py-4">Engineer</th>
-          <th class="bg-gray-600 text-blue-300 border text-left px-8 py-4">Machines assigned</th>
+        <tr class="bg-gray-800">
+          <td class=" text-center px-8 py-4"> <a href='/Machines/'><i
+                class='text-5xl absolute right-6 bx bx-exit text-purple-400'></a></i></a> Manage Engineers <i
+              class='bx bxs-group'></i></td>
+        </tr>
+        <th class="bg-gray-600 text-blue-300 border text-left px-8 py-4">Engineer Name</th>
+        <th class="bg-gray-600 text-blue-300 border text-left px-8 py-4">Engineer ID</th>
+        <th class="bg-gray-600 text-blue-300 border text-left px-8 py-4">Machines Allocated</th>
         </tr>
         <tr>
-          <td class="border px-8 py-4 text-blue-300 animate-pulse"><a href='/Engineers/Create'>Add a new Engineer</a></td> 
+          <td class="border px-8 py-4 text-blue-300 animate-pulse"><a href='/Engineers/Create'>Add a new Engineer</a>
+          </td>
           <td class="border px-8 py-4"><i class="text-blue-300 bx bx-male"> = @Model.Count</i></td>
           <td class="border px-8 py-4"><i class="text-blue-300 bx bxs-factory"> = @ViewBag.MachineTotal</i></td>
         </tr>
@@ -24,32 +29,22 @@
         {
           <h3>No Engineers added to database</h3>
         }
-
         @foreach (Engineer engineer in Model)
         {
           <tr>
             <td class="border px-8 py-4">@Html.ActionLink($"{engineer.EngineerName}", "Details", new { id =
             engineer.EngineerId })</td>
             <td class="border px-8 py-4">
-              @if (engineer.EngineerId < 5) {
-              @for (int i = 0; i < engineer.EngineerId; i++)
-              { 
-                <i class="text-green-400 bx bx-male"></i>
-              }
-              }
-              @if (engineer.EngineerId >= 5) {
-                <i class="text-green-400 bx bx-male"># @engineer.EngineerId</i>
-              }
+              <i class="text-green-400 bx bx-male">#@engineer.EngineerId</i>
             </td>
             <td class="border px-8 py-4">
-              @if (engineer.JoinEntities.Count < 5) {
-              @for (int i = 0; i < engineer.JoinEntities.Count; i++)
+              @if (engineer.JoinEntities.Count > 0)
               {
-                <i class="text-purple-400 bx bxs-factory"></i>
+                <i class="text-purple-400 bx bxs-factory"> x @engineer.JoinEntities.Count</i>
               }
-              }
-              @if (engineer.JoinEntities.Count >= 5) {
-                <i class="text-green-400 bx bx-male"># @engineer.JoinEntities.Count</i>
+              else
+              {
+                <p class="text-blue-300"> Not yet assigned</p>
               }
             </td>
           </tr>

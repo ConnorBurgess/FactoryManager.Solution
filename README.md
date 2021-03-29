@@ -39,11 +39,11 @@ I should be able to navigate to a splash page that lists all engineers and machi
 * Ensure MySQL Workbench is installed [download here](https://www.mysql.com/products/workbench/)
 
 ## Setup 3) Install Tailwind
-* Navigate to ./FactoryManager.Solution/FactoryManager and type $"npm install" (no bling / quotes) in terminal in order to install dependencies.
+* Navigate to ./FactoryManager.Solution/Factory and type $"npm install" (no bling / quotes) in terminal in order to install dependencies.
 * Navigate to ./FactoryManager.Solution/Factorymanager and type $"npx tailwind build ./wwwroot/css/site.css -o ./wwwroot/css/output.css" (no bling / quotes) in terminal in order to build CSS.
 
 ## Setup 4) Create appsettings.json
-* In root directory of project create a file called "appsettings.json"
+* Navigate to ./FactoryManager.Solution/Factory and create a file named "appsettings.json"
 * Copy and paste the following into the file:
 {
   "ConnectionStrings": {
