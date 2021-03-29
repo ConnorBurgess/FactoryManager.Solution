@@ -1,0 +1,26 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Factory.Models.Machine
+<div class="min-h-screen py-6 flex flex-col justify-center sm:py-12 bg-gray-400 ">
+  <div class="relative py-3 max-w-screen mx-auto">
+    <div class="object-center ">
+      <div class="bg-gray-600 p-9">
+        <h4><span class="text-blue-300">Allocate a machine to:</span> @Html.DisplayFor(model => model.MachineName)</h4>
+        <hr class="py-6">
+
+        @using (Html.BeginForm())
+        {
+          @Html.HiddenFor(model => model.MachineId)
+          @Html.Label("Select Engineer") <br>
+          <div class="text-black">@Html.DropDownList("EngineerId")</div>
+          <div class="text-right">
+            <p class="text-blue-300">@Html.ActionLink("Back to list", "Index")</p>
+            <input type="submit" value="Save" class="text-blue-300 bg-gray-700" />
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</div>

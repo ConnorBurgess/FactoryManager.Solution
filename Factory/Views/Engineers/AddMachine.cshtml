@@ -8,8 +8,8 @@
     <div class="object-center ">
       <div class="bg-gray-600 p-9">
         <h4><span class="text-blue-300">Allocate a machine to:</span> @Html.DisplayFor(model => model.EngineerName)</h4>
+        <hr> 
         <hr class="py-6">
-
         @using (Html.BeginForm())
         {
           @Html.HiddenFor(model => model.EngineerId)
